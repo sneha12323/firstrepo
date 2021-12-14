@@ -57,26 +57,26 @@ public class MainActivity extends AppCompatActivity {
 
     public void loadHerolist() {
 
-
-        StringRequest request = new StringRequest(Request.Method.GET, JSON_URL,
-                response -> {
-
-                    try {
-                        JSONObject object = new JSONObject();
-                        JSONArray array = object.getJSONArray("heroes");
-                        for (int i = 0; i < array.length(); i++) {
-                            JSONObject obj = array.getJSONObject(i);
-                            HeroModel heroModel = new HeroModel(obj.getString("name"), obj.getString("imageurl"));
-                            heroModelList.add(heroModel);
-                            Log.d("myapp",obj.getString("name"));
-                            Log.d("myapp",obj.getString("imageurl"));
-                        }
-                    } catch (Exception e) {
-                        e.printStackTrace();
-                    }
-                }, error -> Toast.makeText(getApplicationContext(), "Something went wrong", Toast.LENGTH_SHORT).show());
-
-        RequestQueue requestQueue = Volley.newRequestQueue(this);
-        requestQueue.add(request);
+//
+//        StringRequest request = new StringRequest(Request.Method.GET, JSON_URL,
+//                response -> {
+//
+//                    try {
+//                        JSONObject object = new JSONObject();
+//                        JSONArray array = object.getJSONArray("heroes");
+//                        for (int i = 0; i < array.length(); i++) {
+//                            JSONObject obj = array.getJSONObject(i);
+//                            HeroModel heroModel = new HeroModel(obj.getString("name"), obj.getString("imageurl"));
+//                            heroModelList.add(heroModel);
+//                            Log.d("myapp",obj.getString("name"));
+//                            Log.d("myapp",obj.getString("imageurl"));
+//                        }
+//                    } catch (Exception e) {
+//                        e.printStackTrace();
+//                    }
+//                }, error -> Toast.makeText(getApplicationContext(), "Something went wrong", Toast.LENGTH_SHORT).show());
+//
+//        RequestQueue requestQueue = Volley.newRequestQueue(this);
+//        requestQueue.add(request);
     }
 }
